@@ -1,0 +1,18 @@
+{%extends 'base.html'%}
+{%load static%}
+{%block body%}
+    <div class="block">
+        <h2>add product</h2>
+        <br/>
+        <hr/>
+        <form action="" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{form.title}}
+            <br/>
+            {{form.banner}}
+            <button type="submit">Submit</button>
+            
+        </form>
+    </div>
+{%endblock%}
+

@@ -1,0 +1,28 @@
+{% load static%}
+{% block form%}
+        <div>
+            <form action="{% url 'detail'}" method="post">
+                {% csrf_token %}
+                <h2>Ingreso</h2>
+                <input type="number" name="valor">
+                <button type="submit" value="ingreso">submit</button>
+            </form>
+        </div>
+   {%endblock%} 
+{%block caja %}
+    <div>
+        <div class="">
+            {% if error_message %}
+            <h2>{{error_message}}</h2>
+            {%endif%}
+
+            {% for valor in valorEntrada %}
+            <h2>{{  valor }}</h2>
+            <br/>
+            {% endfor %}
+
+            
+        </div>
+
+    </div>
+{%endblock%}

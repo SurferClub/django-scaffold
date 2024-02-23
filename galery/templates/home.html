@@ -1,0 +1,28 @@
+{%extends 'base.html'%}
+{%load static%}
+{%block body%}
+    <div class="block">
+        <a href="{% url 'addproduct' %}">ADD</a>
+        <h2>home</h2>
+        <br/>
+        <hr/>
+        <div>
+            <div>
+                {% if productlist %}
+                    {%for product in productlist %}
+                    <img href={{product.banner.url}}>
+                        <h2>
+                            {{product.title}}
+                        </h2>
+                    {%endfor%}
+                {%else%}
+                <h2>not products</h2>
+                {% endif %}
+
+                
+            </div>
+        </div>
+    </div>
+{%endblock%}
+
+

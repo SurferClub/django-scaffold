@@ -22,8 +22,9 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('galery', include('galery.urls')), 
-    path('contador', include('contador.urls'))
+    path('galery/', include('galery.urls')), 
+    path('contador/', include('contador.urls')),
+    path('generador/', include('generador.urls'))
 ]
 urlpatterns = urlpatterns + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 

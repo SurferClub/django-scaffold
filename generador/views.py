@@ -3,11 +3,10 @@ from .models import generador
 # Create your views here.
 import random
 
-def generate(request):
-       
+def generate(request):   
     chart = 'abcdefhgijklmnopqrstuvxyz'
     num = "1234567890"
-    specialChart = '-[{<>}]'
+    specialChart = '-[{<>}]-'
     lista = chart + num + specialChart
     password = ''
     for x in range(10):

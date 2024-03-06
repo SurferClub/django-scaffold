@@ -28,30 +28,13 @@ Entrada.objects.filter(caja__name__iexact="caja2")
 <QuerySet [<Entrada: Entrada object (1)>]>
 >>> c
 <QuerySet [<Caja: caja2>]>
->>> e = Entrada.objects.filter(pk=1)
->>> e
-<QuerySet [<Entrada: Entrada object (1)>]>
->>> e.caja
-Traceback (most recent call last):
-  File "<console>", line 1, in <module>
-AttributeError: 'QuerySet' object has no attribute 'caja'
->>> e.monto
-Traceback (most recent call last):
-  File "<console>", line 1, in <module>
-AttributeError: 'QuerySet' object has no attribute 'monto'
->>> e
-<QuerySet [<Entrada: Entrada object (1)>]>
+
 >>> e1 = Entrada.objects.get(pk=1)
 >>> e1
 <Entrada: Entrada object (1)>
 >>> e1.caja
 <Caja: caja1>
->>> e1.caja = c
-Traceback (most recent call last):
-  File "<console>", line 1, in <module>
-  File "C:\Users\harle\Desktop\django-scaffold\env\Lib\site-packages\django\db\models\fields\related_descriptors.py", line 284, in __set__
-    raise ValueError(
-ValueError: Cannot assign "<QuerySet [<Caja: caja2>]>": "Entrada.caja" must be a "Caja" instance.
+
 >>> c1 = Caja.objects.get(name="caja2")
 >>> e1.caja = c1
 >>> e1.save()
